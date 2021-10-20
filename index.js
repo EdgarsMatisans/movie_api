@@ -58,6 +58,10 @@ app.get('/secreturl', (req, res) => {
   res.send('This is a secret url with super top-secret content.');
 });
 
+app.get('/documentation', (req, res) => {
+	res.sendFile('public/documentation.html', { root: __dirname });
+});
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
