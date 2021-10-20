@@ -54,6 +54,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to my myFlix!');
 });
 
+app.get ('/movies', (req, res) => {
+    res.send(MyMovies);
+});
+
 app.get('/secreturl', (req, res) => {
   res.send('This is a secret url with super top-secret content.');
 });
