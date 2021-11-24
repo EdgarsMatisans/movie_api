@@ -1,0 +1,217 @@
+[
+    {
+        "_id": {
+            "$oid": "619815065345f8c3362abc82"
+        },
+        "Title": "Shrek",
+        "Description": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Andrew Adamson",
+            "Bio": "Andrew Ralph Adamson MNZM is a New Zealand film director, producer, and screenwriter based in Los Angeles. He was director, executive producer, scriptwriter, effects supervisor.",
+            "Birth": "1966"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt0126029/mediaviewer/rm955136512/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "619815a45345f8c3362abc83"
+        },
+        "Title": "Shrek 2",
+        "Description": "Shrek and Fiona travel to the Kingdom of Far Far Away, where Fiona's parents are King and Queen, to celebrate their marriage. When they arrive, they find they are not as welcome as they thought they would be.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Andrew Adamson",
+            "Bio": "Andrew Ralph Adamson MNZM is a New Zealand film director, producer, and screenwriter based in Los Angeles. He was director, executive producer, scriptwriter, effects supervisor.",
+            "Birth": "1966"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt0298148/mediaviewer/rm183384576/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "619816685345f8c3362abc84"
+        },
+        "Title": "Shrek 2",
+        "Description": "Shrek and Fiona travel to the Kingdom of Far Far Away, where Fiona's parents are King and Queen, to celebrate their marriage. When they arrive, they find they are not as welcome as they thought they would be.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Andrew Adamson",
+            "Bio": "Andrew Ralph Adamson MNZM is a New Zealand film director, producer, and screenwriter based in Los Angeles. He was director, executive producer, scriptwriter, effects supervisor.",
+            "Birth": "1966"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt0298148/mediaviewer/rm183384576/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "6198176d5345f8c3362abc85"
+        },
+        "Title": "Shrek the Third",
+        "Description": "Reluctantly designated as the heir to the land of Far, Far Away, Shrek hatches a plan to install the rebellious Artie as the new king while Princess Fiona tries to fend off a coup d'état by the jilted Prince Charming.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Chris Miller",
+            "Bio": "Christopher Matthew Miller,is an American voice actor, animator, director, screenwriter, and storyboard artist employed by DreamWorks Animation.",
+            "Birth": "1968"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt0413267/mediaviewer/rm4214262784/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "6198183a5345f8c3362abc86"
+        },
+        "Title": "Shrek Forever After",
+        "Description": "Rumpelstiltskin tricks a mid-life crisis burdened Shrek into allowing himself to be erased from existence and cast in a dark alternate timeline where Rumpelstiltskin rules supreme.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Mike Mitchell",
+            "Bio": "Mike Mitchell, is an American film director, former animator, storyboard artist, writer, producer, and actor.",
+            "Birth": "1970"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt0892791/mediaviewer/rm3802959104/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "619819205345f8c3362abc87"
+        },
+        "Title": "How to Train Your Dragon",
+        "Description": "A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Dean DeBlois",
+            "Bio": "Dean DeBlois,  is a Canadian film director, film producer, screenwriter, and animator. He is best known for writing and directing.",
+            "Birth": "1970"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt0892769/mediaviewer/rm2210040832/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "619819dd5345f8c3362abc88"
+        },
+        "Title": "How to Train Your Dragon 2",
+        "Description": "When Hiccup and Toothless discover an ice cave that is home to hundreds of new wild dragons and the mysterious Dragon Rider, the two friends find themselves at the center of a battle to protect the peace.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Dean DeBlois",
+            "Bio": "Dean DeBlois,  is a Canadian film director, film producer, screenwriter, and animator. He is best known for writing and directing.",
+            "Birth": "1970"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt1646971/mediaviewer/rm2131480064/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "61981e84466d80f78032a7b2"
+        },
+        "Title": "How to Train Your Dragon 3",
+        "Description": "When Hiccup discovers Toothless isn't the only Night Fury, he must seek The Hidden World, a secret Dragon Utopia before a hired tyrant named Grimmel finds it first.",
+        "Genre": {
+            "Name": "Animation",
+            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+        },
+        "Director": {
+            "Name": "Dean DeBlois",
+            "Bio": "Dean DeBlois,  is a Canadian film director, film producer, screenwriter, and animator. He is best known for writing and directing.",
+            "Birth": "1970"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt2386490/mediaviewer/rm3031449600/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "61981f61466d80f78032a7b3"
+        },
+        "Title": "The Hitman’s Bodyguard",
+        "Description": "The world's top bodyguard gets a new client, a hitman who must testify at the International Criminal Court. They must put their differences aside and work together to make it to the trial on time.",
+        "Genre": {
+            "Name": "Action",
+            "Description": "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+        },
+        "Director": {
+            "Name": "Patrick Hughes",
+            "Bio": "Patrick Hughes, is an Australian film director and actor."
+        },
+        "ImagePath": "https://www.imdb.com/title/tt1959563/mediaviewer/rm476131072/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "61981fdc466d80f78032a7b4"
+        },
+        "Title": "Hitmans Wifes Bodyguard",
+        "Description": "The bodyguard Michael Bryce continues his friendship with assassin Darius Kincaid as they try to save Darius' wife Sonia.",
+        "Genre": {
+            "Name": "Action",
+            "Description": "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+        },
+        "Director": {
+            "Name": "Patrick Hughes",
+            "Bio": "Patrick Hughes, is an Australian film director and actor."
+        },
+        "ImagePath": "https://www.imdb.com/title/tt8385148/mediaviewer/rm1560592641/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "61982096466d80f78032a7b5"
+        },
+        "Title": "Deadpool",
+        "Description": "A wisecracking mercenary gets experimented on and becomes immortal but ugly, and sets out to track down the man who ruined his looks.",
+        "Genre": {
+            "Name": "Action",
+            "Description": "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+        },
+        "Director": {
+            "Name": "Tim Miller",
+            "Bio": "Tim Miller is an American film director, producer, screenwriter, and visual effects artist.",
+            "Birth": "1964"
+        },
+        "ImagePath": "https://www.imdb.com/title/tt1431045/mediaviewer/rm351021568/?ref_=tt_ov_i",
+        "Featured": true
+    },
+    {
+        "_id": {
+            "$oid": "61994aa4466d80f78032a7bb"
+        },
+        "Title": "Silence of the Lambs",
+        "Description": "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer.",
+        "Genre": {
+            "Name": "Thriller",
+            "Description": "Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."
+        },
+        "Director": {
+            "Name": "Jonathan Demme",
+            "Bio": "Jonathan Demme is one of the best Direcors.",
+            "Birth": "1944",
+            "Death": "2017"
+        },
+        "ImagePath": "silenceofthelambs.png",
+        "Featured": true
+    }
+]

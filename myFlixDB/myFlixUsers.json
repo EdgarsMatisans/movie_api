@@ -1,0 +1,56 @@
+[
+    {
+        "_id": {
+            "$oid": "6198287a466d80f78032a7b6"
+        },
+        "Username": "John Jonson",
+        "Password": "johny123",
+        "Email": "johny@gmail.com",
+        "Birthday": "1999-10-10",
+        "FavoriteMovies": [
+            {
+                "$oid": "61982096466d80f78032a7b5"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6198295c466d80f78032a7b7"
+        },
+        "Username": "Adam Adams",
+        "Password": "adamov123",
+        "Email": "adamov@gmail.com",
+        "Birthday": "1999-11-11",
+        "FavoriteMovies": []
+    },
+    {
+        "_id": {
+            "$oid": "619829b5466d80f78032a7b8"
+        },
+        "Username": "Aaron Aron",
+        "Password": "aaron123",
+        "Email": "aaron@gmail.com",
+        "Birthday": "2000-11-11",
+        "FavoriteMovies": []
+    },
+    {
+        "_id": {
+            "$oid": "61982a0c466d80f78032a7b9"
+        },
+        "Username": "Pol Jonson",
+        "Password": "jonson123",
+        "Email": "jonson@gmail.com",
+        "Birthday": "2000-11-11",
+        "FavoriteMovies": []
+    },
+    {
+        "_id": {
+            "$oid": "61994eed466d80f78032a7bc"
+        },
+        "Username": "Jon Polak",
+        "Password": "polak123",
+        "Email": "polak@gmail.com",
+        "Birthday": "2000-11-11",
+        "FavoriteMovies": []
+    }
+]
