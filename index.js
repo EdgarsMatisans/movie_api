@@ -12,7 +12,6 @@ const Users = Models.User;
 const Genres = Models.Genre;
 const Director = Models.Director;
 
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(morgan('common'));
@@ -21,22 +20,39 @@ app.use(express.static('public'));
 mongoose.connect('mongodb://localhost:27017/test',
   {useUnifiedTopology: true});
 
+let auth = require('./auth')(app);
 
+const cors = require("cors");
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){ // If a specific origin isn’t found on the list of allowed origins
+      let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
+      return callback(new Error(message ), false);
+    }
+    return callback(null, true);
+  }
+}));
+
+const passport = require('passport');
+  require('./passport');
 
 app.get('/', (req, res) => {
   res.send('Welcome to my myFlix!');
 });
 
 // Get a list of all the movies.
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.find()
-    .then((movie) => {
-      res.status(201).json(movie);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
+      .then((movies) => {
+          res.status(201).json(movies);
+      })
+      .catch((err) => {
+          console.error(err);
+          res.status(500).send('Error: ' + err);
+      });
 });
 
 app.get('/secreturl', (req, res) => {
@@ -48,7 +64,7 @@ app.get('/documentation', (req, res) => {
 });
 
 // Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title to the user.
-app.get('/movies/:title', (req, res) => {
+app.get('/movies/:title', ("jwt", { session: false }), (req, res) => {
    Movies.findOne({Title: req.params.title})
    .then((movie) => {
     res.json(movie); 
@@ -60,7 +76,7 @@ app.get('/movies/:title', (req, res) => {
     });
 
   // Return data about a genre (description) by name/title (e.g., “Thriller”).
-app.get('/movies/genre/:name', (req, res) => {
+app.get('/movies/genre/:name', ("jwt", { session: false }), (req, res) => {
   Movies.findOne({"Genre.Name" : req.params.name})
     .then((genre) => {
       res.json(genre);
@@ -72,7 +88,7 @@ app.get('/movies/genre/:name', (req, res) => {
 });
 
   // Return data about a director (bio, birth year, death year) by name.
-  app.get('/movies/director/:name', (req, res) => {
+  app.get('/movies/director/:name', ("jwt", { session: false }), (req, res) => {
     Movies.findOne({"Director.Name" : req.params.name})
       .then((director) => {
         res.json(director);
@@ -84,7 +100,7 @@ app.get('/movies/genre/:name', (req, res) => {
   });
 
   // Get all users
-app.get("/users", (req, res) => {
+app.get("/users", ("jwt", { session: false }), (req, res) => {
   Users.find()
     .then((users) => {
       res.status(201).json(users);
@@ -96,7 +112,7 @@ app.get("/users", (req, res) => {
 });
 
 // Get a user by username
-app.get('/users/:Username', (req, res) => {
+app.get('/users/:Username', ("jwt", { session: false }), (req, res) => {
   Users.findOne({Username: req.params.Username})
     .then((user) => {
       res.json(user);
@@ -203,32 +219,13 @@ app.delete('/users/:Username', (req, res) => {
     });
 });
 
-  // Allow users to update their user info (username, password, email, date of birth).
-app.put('/newUser/:id/info', (req, res) => {
-    res.send('Successful PUT request user info updated.');
-  });
-
-  // Allow users to add a movie to their list of favorites (showing only a text that a movie has been added—more on this later)
-app.post('/newUser/:id/favorites', (req, res) => {
-    res.send('Successful POST request movie has been added to favorites.');
-  });
-
-  // Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed—more on this later)
-app.delete('/newUser/:id/favorites', (req, res) => {
-    res.send(
-      'Successful DELETE request movie has been deleted from user list of favorites.');
-    });
-
-    // Allow existing users to deregister
-app.delete('/newUser', (req, res) => {
-    res.send('Successful DELETE request existing user has been deregistered.');
-  });
-
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
   });
 
-app.listen(8080, () => {
-  console.log('Your app is listening on port 8080.');
-});
+
+const port = process.env.PORT || 8080;
+    app.listen(port, () => {
+      console.log(`Your app is listening on port ${port}`);
+    });
