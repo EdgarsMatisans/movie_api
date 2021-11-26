@@ -44,15 +44,15 @@ app.get('/', (req, res) => {
 });
 
 // Get a list of all the movies.
-app.get('/movies', passport.authenticate("jwt", { session: false }), (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
-      .then((movies) => {
-          res.status(201).json(movies);
-      })
-      .catch((err) => {
-          console.error(err);
-          res.status(500).send('Error: ' + err);
-      });
+    .then((movies) => {
+      res.status(200).json(movies);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 app.get('/secreturl', (req, res) => {
@@ -64,19 +64,19 @@ app.get('/documentation', (req, res) => {
 });
 
 // Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title to the user.
-app.get('/movies/:title', ("jwt", { session: false }), (req, res) => {
-   Movies.findOne({Title: req.params.title})
-   .then((movie) => {
-    res.json(movie); 
-   })
-   .catch((err) => {
-     console.error(err);
-     res.status(500).send("Error: " + err);
-   });     
-    });
+app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Movies.findOne({ Title: req.params.Title })
+  .then((movie) => {
+    res.json(movie);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  });
+});
 
   // Return data about a genre (description) by name/title (e.g., “Thriller”).
-app.get('/movies/genre/:name', ("jwt", { session: false }), (req, res) => {
+app.get('/movies/genre/:name', passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.findOne({"Genre.Name" : req.params.name})
     .then((genre) => {
       res.json(genre);
@@ -87,17 +87,52 @@ app.get('/movies/genre/:name', ("jwt", { session: false }), (req, res) => {
     });
 });
 
-  // Return data about a director (bio, birth year, death year) by name.
-  app.get('/movies/director/:name', ("jwt", { session: false }), (req, res) => {
-    Movies.findOne({"Director.Name" : req.params.name})
-      .then((director) => {
-        res.json(director);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-      });
+//Get all directors
+app.get('/directors', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Directors.find()
+  .then((directors) => {
+    res.status(200).json(directors);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
   });
+});
+
+  // Return data about a director (bio, birth year, death year) by name.
+  app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Directors.findOne({ Name: req.params.Name })
+    .then((director) => {
+      res.json(director);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+  });
+//Get all genres
+  app.get('/genres', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Genres.find()
+    .then((genres) => {
+      res.status(200).json(genres);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+  });
+
+  //Get Genre by name
+app.get('/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Genres.findOne({ Name: req.params.Name })
+  .then((genre) => {
+    res.json(genre);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  });
+});
 
   // Get all users
   app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -112,8 +147,8 @@ app.get('/movies/genre/:name', ("jwt", { session: false }), (req, res) => {
   });
 
 // Get a user by username
-app.get('/users/:Username', ("jwt", { session: false }), (req, res) => {
-  Users.findOne({Username: req.params.Username})
+app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Users.findOne({ Username: req.params.Username })
     .then((user) => {
       res.json(user);
     })
