@@ -13,6 +13,11 @@ const Users = Models.User;
 const Genres = Models.Genre;
 const Director = Models.Director;
 
+mongoose.connect( process.env.CONNECTION_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(morgan('common'));
