@@ -23,8 +23,6 @@ app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost:27017/test',
-  {useUnifiedTopology: true});
 
 const cors = require("cors");
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
