@@ -48,14 +48,14 @@ app.get('/', (req, res) => {
 });
 
 // Get a list of all the movies.
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get("/movies", function (req, res) {
   Movies.find()
-    .then((movies) => {
+    .then(function (movies) {
       res.status(201).json(movies);
     })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
+    .catch(function (error) {
+      console.error(error);
+      res.status(500).send("Error: " + error);
     });
 });
 
@@ -211,6 +211,7 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
   });
 
   // Update a user's info, by username
+
   app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOneAndUpdate({ Username: req.params.Username }, {$set:
       {
