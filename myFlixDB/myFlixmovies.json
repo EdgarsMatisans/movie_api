@@ -19,24 +19,6 @@
     },
     {
         "_id": {
-            "$oid": "619815a45345f8c3362abc83"
-        },
-        "Title": "Shrek 2",
-        "Description": "Shrek and Fiona travel to the Kingdom of Far Far Away, where Fiona's parents are King and Queen, to celebrate their marriage. When they arrive, they find they are not as welcome as they thought they would be.",
-        "Genre": {
-            "Name": "Animation",
-            "Description": "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
-        },
-        "Director": {
-            "Name": "Andrew Adamson",
-            "Bio": "Andrew Ralph Adamson MNZM is a New Zealand film director, producer, and screenwriter based in Los Angeles. He was director, executive producer, scriptwriter, effects supervisor.",
-            "Birth": "1966"
-        },
-        "ImagePath": "https://www.imdb.com/title/tt0298148/mediaviewer/rm183384576/?ref_=tt_ov_i",
-        "Featured": true
-    },
-    {
-        "_id": {
             "$oid": "619816685345f8c3362abc84"
         },
         "Title": "Shrek 3",
