@@ -25,7 +25,7 @@ app.use(express.static('public'));
 
 
 const cors = require("cors");
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://objective-einstein-1a3f36.netlify.app'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -164,50 +164,47 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
 });
 
   // Allow new users to register.
-  app.post('/users',
-  // Validation logic here for request
-  //you can either use a chain of methods like .not().isEmpty()
-  //which means "opposite of isEmpty" in plain english "is not empty"
-  //or use .isLength({min: 5}) which means
-  //minimum value of 5 characters are only allowed
-  [
-    check('Username', 'Username is required').isLength({min: 5}),
+  app.post("/users",
+  [ //validates user input data when registering
+    check('Username', 'Username is required').isLength({ min: 5 }),
     check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
   ], (req, res) => {
 
-  // check the validation object for errors
+    // check the validation object for errors
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
     }
 
+    //hashing the password user enters
     let hashedPassword = Users.hashPassword(req.body.Password);
-    Users.findOne({ Username: req.body.Username }) // Search to see if a user with the requested username already exists
-      .then((user) => {
-          if (user) {
-            //If the user is found, send a response that it already exists
-            return res.status(400).send(req.body.Username + ' already exists');
-          } else {
-            Users
-              .create({
-                Username: req.body.Username,
-                Password: hashedPassword,
-                Email: req.body.Email,
-                Birthday: req.body.Birthday
-              })
-              .then((user) => { res.status(201).json(user); })
-              .catch((error) => {
-                console.error(error);
-                res.status(500).send('Error: ' + error);
-              });
-          }
-        })
-      .catch((error) => {
+    Users.findOne({ Username: req.body.Username }) //checks if the user already exists
+      .then(user => {
+        if (user) {
+          //then responds this if user exists
+          return res.status(400).send(req.body.Username + "already exists");
+        } else {
+          Users.create({
+            Username: req.body.Username,
+            Password: hashedPassword,
+            Email: req.body.Email,
+            Birthday: req.body.Birthday
+          })
+            .then(user => {
+              res.status(201).json(user);
+            })
+            .catch(error => {
+              console.error(error);
+              res.status(500).send("Error: " + error);
+            });
+        }
+      })
+      .catch(error => {
         console.error(error);
-        res.status(500).send('Error: ' + error);
+        res.status(500).send("Error: " + error);
       });
   });
 
