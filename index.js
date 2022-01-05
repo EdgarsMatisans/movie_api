@@ -25,7 +25,8 @@ app.use(express.static('public'));
 
 
 const cors = require("cors");
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://objective-einstein-1a3f36.netlify.app'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://objective-einstein-1a3f36.netlify.app',
+" https://61d36a5ccacc69000810e7c7--objective-einstein-1a3f36.netlify.app"];
 
 app.use(cors({
   origin: (origin, callback) => {
